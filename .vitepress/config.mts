@@ -2,89 +2,104 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "启智云开放平台",
-  description: "启智云开放文档",
+  title: "AirPower4T",
+  description: "AirPower4T 开发文档",
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
+    logo: '/assets/img/logo.png',
+    siteTitle: false,
+    search: {
+      provider: 'local'
+    },
     nav: [
       { text: '首页', link: '/' },
-      { text: '开放文档', link: '/readme' }
+      { text: '掘金专栏', link: 'https://juejin.cn/column/7249148919505682491' },
+      { text: '关于作者', link: 'https://hamm.cn' }
     ],
-
+    socialLinks: [
+      { icon: 'github', link: 'https://github.com/HammCn/AirPower4T' },
+    ],
+    footer: {
+      copyright: 'Copyright © 2024 Hamm.cn'
+    },
+    editLink: {
+      pattern: 'https://github.com/HammCn/AirPower-Document/edit/main/:path',
+      text: '有错误?点击修改'
+    },
+    lastUpdated: {
+      text: '最后更新',
+      formatOptions: {
+        dateStyle: 'short',
+        timeStyle: 'medium'
+      }
+    },
+    docFooter: {
+      prev: '上一篇',
+      next: '下一篇'
+    },
+    returnToTopLabel: "回顶部",
     sidebar: [
       {
-        text: '写在前面',
+        text: '请先阅读',
         items: [
-          { text: '平台简介', link: '/readme' },
+          { text: '项目介绍', link: '/readme/project' },
           { text: '术语说明', link: '/readme/words' },
-          { text: '错误代码表', link: '/readme/errorcodes' },
         ]
       },
       {
-        text: '技术对接',
+        text: '快速开始',
         items: [
-          { text: '对接方式说明', link: '/connect/readme' },
-          { text: '签名与验签', link: '/connect/signature' },
-          { text: '加密和解密', link: '/connect/security' },
+          { text: '项目初始化', link: '/start/init' },
+          { text: '基础配置', link: '/start/config' },
         ]
       },
       {
-        text: '开放接口',
+        text: '内置装饰器',
         items: [
-          {
-            text: '公共接口',
-            items: [
-              { text: '获取系统错误代码', link: '/common/errorcodes' },
-            ]
-          },
-          {
-            text: '企业与园区',
-            items: [
-              { text: '查询当前企业信息', link: '/enterprise/get' },
-              { text: '查询可用任务列表', link: '/enterprise/tasks' },
-              { text: '查询可用园区列表', link: '/enterprise/parks' },
-            ]
-          },
-          {
-            text: '资金发放',
-            items: [
-              { text: '创建支付订单', link: '/order/create' },
-              { text: '查询支付订单', link: '/order/get' },
-              { text: '处理订单回调', link: '/order/callback' },
-            ]
-          },
-          {
-            text: '账单与回单',
-            items: [
-              { text: '申请支付账单', link: '/order/apply' },
-              { text: '申请支付回单', link: '/receipt/apply' },
-            ]
-          },
+          { text: '@Model', link: '/decorator/model' },
+          { text: '@Field', link: '/decorator/field' },
+          { text: '@Form', link: '/decorator/form' },
+          { text: '@Table', link: '/decorator/table' },
+          { text: '@Search', link: '/decorator/search' },
         ]
       },
       {
-        text: 'WebHook',
+        text: '内置组件',
         items: [
-          {
-            text: '任务',
-            items: [
-              { text: '任务创建', link: '/webhook/task/create' },
-              { text: '任务审核', link: '/webhook/task/create' },
-            ]
-          },
-          {
-            text: '订单',
-            items: [
-              { text: '手动发放订单', link: '/webhook/task/create' },
-              { text: '任务审核', link: '/webhook/task/audit' },
-            ]
-          },
+          { text: 'ACopy', link: '/component/copy' },
+          { text: 'ADateTime', link: '/component/datetime' },
+          { text: 'AButton', link: '/component/button' },
+          { text: 'AFrame', link: '/component/frame' },
+          { text: 'APanel', link: '/component/panel' },
+          { text: 'APage', link: '/component/page' },
+          { text: 'ATable', link: '/component/table' },
+          { text: 'AToolBar', link: '/component/toolbar' },
+          { text: 'AGroup', link: '/component/group' },
+          { text: 'ADialog', link: '/component/dialog' },
+          { text: 'AInput', link: '/component/input' },
+          { text: 'AUser', link: '/component/user' },
+          { text: 'AUpload', link: '/component/upload' },
+          { text: 'AImage', link: '/component/image' },
+          { text: 'AEmpty', link: '/component/empty' },
+          { text: 'AMenu', link: '/component/menu' },
+          { text: 'ATreeBox', link: '/component/treebox' },
+          { text: 'ATabs', link: '/component/tabs' },
+          { text: 'ATab', link: '/component/tab' },
+          { text: 'APhone', link: '/component/phone' },
+          { text: 'AQrcode', link: '/component/qrcode' },
+          { text: 'ASelect', link: '/component/select' },
+          { text: 'ASelector', link: '/component/selector' },
+          { text: 'AMoney', link: '/component/money' },
+          { text: 'AFormField', link: '/component/formfield' },
+          { text: 'ATablePayload', link: '/component/tablepayload' },
+          { text: 'ADesensitize', link: '/component/desensitize' },
         ]
       },
+      {
+        text: '内置工具类',
+        items: [
+        ]
+      }
     ],
-
-    socialLinks: [
-      { icon: 'github', link: 'https://github.com/HammCn' }
-    ]
   }
 })
